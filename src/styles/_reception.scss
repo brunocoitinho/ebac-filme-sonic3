@@ -1,0 +1,45 @@
+@use "variaveis";
+
+.reception {
+    height: 100vh;
+    margin: 0 auto;
+    background-color: black;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+
+    &__content {
+        color: variaveis.$corTextoPrincipal;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    &__button{
+        width: 10rem;
+        height: 2.5rem;
+        border-radius: 1rem;
+        border: none;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    &__image {
+        background-image: url("../img/sonic_up.jpg");
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 10%,
+            rgb(255, 255, 255) 90%
+        );
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0% 0%;
+        width: 100%;
+        height: 100%;
+    }
+}

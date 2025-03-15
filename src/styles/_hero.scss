@@ -1,0 +1,46 @@
+@use "variaveis";
+
+.hero {
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    background-color: black;
+
+    &__content {
+        color: variaveis.$corTextoPrincipal;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+        padding-top: 0;
+    }
+
+    &__button{
+        width: 10rem;
+        height: 2.5rem;
+        border-radius: 1rem;
+        border: none;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    &__image {
+        background-image: url("../img/hero-shadow.png");
+        mask-image: linear-gradient(
+            to right,
+            transparent 30%,
+            rgb(255, 255, 255) 70%
+        );
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top right;
+        width: 100%;
+        height: 100%;
+    }
+}

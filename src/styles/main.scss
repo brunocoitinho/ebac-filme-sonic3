@@ -1,0 +1,32 @@
+@use "hero";
+@use "header";
+@use "variaveis";
+@use "sinopse";
+@use "characters";
+@use "reception";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+body{
+    background-color: #000;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+.text{
+    @include text(20px);
+}

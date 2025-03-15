@@ -1,0 +1,48 @@
+.header{
+    height: calc(100vh - 84.2vh);
+    border-bottom: 5px solid red;
+    background-color: black;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px 0;
+        height: 100%;
+    }
+
+    &__logo{
+        width: 100px;
+        padding-bottom: 10px;
+    }
+
+    &__nav{
+        display: flex;
+        align-items: flex-end;
+
+
+        &__list{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__item{
+            margin-left: 10px;
+            height: 100%;
+            border-bottom: 2px solid transparent;
+            padding: 0 5px;
+
+            &--is-selected{
+                border-color: red;
+            }
+        }
+        
+        &__link{
+            text-decoration: none;
+            
+        }
+    }
+}
