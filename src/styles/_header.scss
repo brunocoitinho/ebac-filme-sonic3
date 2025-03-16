@@ -1,6 +1,8 @@
+@use "variaveis";
+
 .header{
     height: calc(100vh - 84.2vh);
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid variaveis.$mainRed;
     background-color: black;
     position: sticky;
     z-index: 999;
@@ -36,7 +38,7 @@
             padding: 0 5px;
 
             &--is-selected{
-                border-color: red;
+                border-color: variaveis.$mainRed;;
             }
         }
         

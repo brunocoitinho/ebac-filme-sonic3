@@ -32,6 +32,26 @@ module.exports = function(grunt){
             }
         },
 
+        htmlmin:{
+            dist:{
+                options:{
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files:{
+                    'public/index.html': 'src/index.html'
+                }
+            }
+        },
+
+        uglify:{
+            target:{
+                files:{
+                    'public/scripts/main.js' : 'src/scripts/main.js'
+                }
+            }
+        },
+
         watch:{
             sass:{
                 files: ['src/styles/**/*.scss'],
@@ -43,7 +63,9 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin')
+    grunt.loadNpmTasks('grunt-contrib-uglify')
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['sass:dist', 'imagemin']);
+    grunt.registerTask('build', ['htmlmin:dist', 'sass:dist', 'imagemin', 'uglify']);
 };
