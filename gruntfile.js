@@ -8,7 +8,7 @@ module.exports = function(grunt){
                     style:'compressed'
                 },
                 files:{
-                    'dist/styles/main.css' : 'src/styles/main.scss'
+                    'public/styles/main.css' : 'src/styles/main.scss'
                 }
             },
             dev:{
@@ -16,12 +16,10 @@ module.exports = function(grunt){
                     style:'expanded'
                 },
                 files:{
-                    'dist/styles/main.css' : 'src/styles/main.scss'
+                    'public/styles/main.css' : 'src/styles/main.scss'
                 }
             }
-
         },
-
 
         imagemin: {
             dynamic: {
@@ -29,7 +27,7 @@ module.exports = function(grunt){
                     expand: true,
                     cwd: 'src/img/',
                     src: ['**/*.{png,jpg,gif,jpeg}'],
-                    dest: 'dist/img'
+                    dest: 'public/img'
                 }]
             }
         },
@@ -38,17 +36,14 @@ module.exports = function(grunt){
             sass:{
                 files: ['src/styles/**/*.scss'],
                 tasks: ['sass:dev']
-            },
+            }
         }
-    })
-
+    });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-
-
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['sass:dist', 'imagemin'])
-}
+    grunt.registerTask('build', ['sass:dist', 'imagemin']);
+};
